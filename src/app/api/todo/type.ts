@@ -1,8 +1,9 @@
 export enum TodoStatus {
-  COMPLETED,
-  PENDING,
+  COMPLETED = "COMPLETED",
+  PENDING = "PENDING",
 }
 export interface Todo {
+  id:string,
   title: string;
   description: string;
   dueDate?: Date;

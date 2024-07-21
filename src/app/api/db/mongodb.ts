@@ -1,8 +1,13 @@
+import { StatusCodes } from 'http-status-codes';
+import { todos } from '../mock/todoData';
+import { Todo } from '../todo/type';
 
-import { users } from '../mock/userData';
-import { Todo, TodoStatus } from '../todo/type';
-import { User } from '../user/type';
+export function getTodo() {
+  return todos;
+}
 
-export const getUser = (): User[] => {
-  return users;
-};
+export function createTodo(newTodo: Todo) {
+  newTodo.id = (todos.length + 1).toString();
+  todos.push(newTodo);
+  return newTodo;
+}
