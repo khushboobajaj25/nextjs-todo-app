@@ -20,7 +20,6 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   const newTodo = await request.json();
-  let res;
   if (!newTodo.title || !newTodo.description) {
     NextResponse.json({
       status: StatusCodes.BAD_REQUEST,
